@@ -3,6 +3,7 @@ var fs = require('fs');
 var url = require('url');
 var qs = require('querystring');
 
+/*
 function templateHTML(title, list, body, control) {
   return `
   <!doctype html>
@@ -22,6 +23,24 @@ function templateHTML(title, list, body, control) {
   </html>
   `;
 }
+*/
+function templateHTML(title, list, body, control) {
+  return `
+  <!doctype html>
+  <html>
+  <head>
+    <title>WEB1 - nodejs 가 싫어요</title>
+    <meta charset="utf-8">
+    <meta http-equiv="refresh" content="10">
+  </head>
+  <body>
+    <h1><a href="/">nodejs 가 싫어요</a></h1>
+    <p><img onclick="window.location.reload()" src="/imgs" width="100%" height="100%"></p>
+  </body>
+  </html>
+  `;
+}
+
 
 function templateList(filelist) {
   var list = '<ul>';
@@ -51,9 +70,10 @@ var app = http.createServer(function(request, response) {
         response.writeHead(200);
         response.end(template);
       });
-    } else {
-      fs.readdir('../#13', function(error, filelist) {
-        fs.readFile(`../#13/${queryData.id}`, 'utf8', function(err, description) {
+    }
+    else {
+      fs.readdir('../project', function(error, filelist) {
+        fs.readFile(`../project/${queryData.id}`, 'utf8', function(err, description) {
           var title = queryData.id;
           var list = templateList(filelist);
           var template = templateHTML(title, list,
@@ -70,6 +90,7 @@ var app = http.createServer(function(request, response) {
         });
       });
     }
+    /*
   } else if (pathname === '/create') {
     fs.readdir('../#13', function(error, filelist) {
       var title = 'WEB - create';
@@ -164,7 +185,9 @@ var app = http.createServer(function(request, response) {
         response.end();
       });
     });
-  } else if(pathname === '/imgs'){
+  } else
+  */
+}else if(pathname === '/imgs'){
     fs.readFile('coding.jpg',function(error,data){
       response.writeHead(200,{'Content-Type': 'text/html'});
       response.end(data);
