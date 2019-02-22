@@ -24,6 +24,7 @@ function templateHTML(title, list, body, control) {
   `;
 }
 */
+/*
 function templateHTML(title, list, body, control) {
   return `
   <!doctype html>
@@ -40,7 +41,70 @@ function templateHTML(title, list, body, control) {
   </html>
   `;
 }
-
+*/
+function templateHTML(title, list, body, control) {
+  return `
+  <!DOCTYPE html>
+  <html>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  .container {
+    position: relative;
+    width: 100%;
+  }
+  
+  .image {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #FDFDFD;
+  }
+  
+  .container:hover .overlay {
+    opacity: 1;
+  }
+  
+  .text {
+    color: black;
+    font-size: 80px;
+    font-family: Georgia, "맑은 고딕", serif; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    onclick: window.location.reload();
+  }
+  </style>
+  </head>
+  <body>
+    
+  <div onclick="window.location.reload()" class="container">
+    <img src="/imgs" alt="Avatar" class="image">
+    <div class="overlay">
+      <div class="text">Hello! 안녕하세요!</div>
+    </div>
+  </div>
+  
+  </body>
+  </html>`;
+}
 
 function templateList(filelist) {
   var list = '<ul>';
@@ -188,7 +252,7 @@ var app = http.createServer(function(request, response) {
   } else
   */
 }else if(pathname === '/imgs'){
-    fs.readFile('coding.jpg',function(error,data){
+    fs.readFile('coding2.jpg',function(error,data){
       response.writeHead(200,{'Content-Type': 'text/html'});
       response.end(data);
     })
