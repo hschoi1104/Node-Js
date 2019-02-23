@@ -6,6 +6,11 @@
 클릭할때 새로고침 이벤트를 발생시켜 변경된 파일을 읽어들이는 방법으로... 주륵...
 
 
-# URL의 이해
+# URL의 구조
 https://opentutorials.org:3000/main?id=HTML&page=12
 프로토콜   host(domain)    포트 path    쿼리스트링
+
+쿼리스트링과 path정보를 이용한 동적페이지 생성방법을 사용함
+
+#참고
+https://nodejs.org/ko/docs/guides/anatomy-of-an-http-transaction/
