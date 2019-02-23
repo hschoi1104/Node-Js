@@ -12,5 +12,5 @@ https://opentutorials.org:3000/main?id=HTML&page=12
 
 쿼리스트링과 path정보를 이용한 동적페이지 생성방법을 사용함
 
-#참고
+# 참고 (nodejs 트랜잭션)
 https://nodejs.org/ko/docs/guides/anatomy-of-an-http-transaction/
