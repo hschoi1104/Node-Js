@@ -1,8 +1,11 @@
+//필요한 모듈들 추가
 var http = require('http');
 var fs = require('fs');
 var url = require('url');
 var qs = require('querystring');
-
+var filecontent=" ";
+//화면구성을 위한 HTML+CSS
+//함수의 반환값으로 HTML코드를 주면서 동적인 페이지 생성을 가능하게함
 function templateHTML() {
   return `
   <!DOCTYPE html>
@@ -20,6 +23,10 @@ function templateHTML() {
     display: block;
     width: 100%;
     height: 100%;
+    margin: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+   background-size: cover;
   }
   
   .overlay {
