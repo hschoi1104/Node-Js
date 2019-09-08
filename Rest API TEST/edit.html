@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Page</title>
+</head>
+<body>
+  <h1>Edit Page</h1>
+  <hr />
+  <form method="post">
+    <fieldset>
+      <legend>Edit Data</legend>
+      <table>
+        <tr>
+          <td><label>BOJ_ID</label></td>
+          <td><input type="text" name="id" value="<%= data.user_id %>" disabled /></td>
+        </tr>
+        <tr>
+          <td><label>user_name</label></td>
+          <td><input type="text" name="name" value="<%= data.user_name %>" /></td>
+        </tr>
+      </table>
+      <input type="submit" />
+    </fieldset>
+  </form>
+</body>
+</html>
